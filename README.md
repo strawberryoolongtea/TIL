@@ -4,4 +4,4 @@
   - class
   - instance
   - prototype
-  - __proto__
+  - \_\_proto__
