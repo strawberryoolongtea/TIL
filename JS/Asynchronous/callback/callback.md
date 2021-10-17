@@ -1,3 +1,0 @@
-# callback
- 
-callback is ...
