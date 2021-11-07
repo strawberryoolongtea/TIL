@@ -41,7 +41,7 @@ drwxrwxrwx
 
 ```d / rwx / rwx / rwx```
 
-## user 사용 권한
+### user 사용 권한
 
 첫 번째 권한인 user(사용자)는 파일의 소유자이다.
 
@@ -49,7 +49,7 @@ drwxrwxrwx
 
 따라서 user를 소유자(owner)라고 하기도 한다.
 
-## group 사용 권한
+### group 사용 권한
 
 group에는 여러 user가 포함될 수 있다.
 
@@ -59,7 +59,7 @@ group에 속한 모든 user는 파일에 대한 동일한 group 액세스 권한
 
 각 user에게 일일히 권한을 할당하는 대신 모든 user를 group에 추가하고 파일에 group 권한을 할당할 수 있다.
 
-## other 사용 권한
+### other 사용 권한
 
 파일에 대한 액세스 권한이 있는 다른 user를 말한다.
 
@@ -67,7 +67,7 @@ group에 속한 모든 user는 파일에 대한 동일한 group 액세스 권한
 
 따라서 other 권한을 설정하면 해당 권한을 global 권한 설정이라고 볼 수도 있다.
 
-## 사용 권한 변경
+### 사용 권한 변경
 
 OS에 로그인한 사용자와 폴더 및 파일의 소유자가 같을 경우
 
@@ -149,3 +149,17 @@ chmod 734 helloworld.js
 ```
 
 ```helloworld.js``` 의 파일 권한은 ```-rwx-wxr--``` 로 변경되었다.
+
+## 환경 변수
+
+### 환경 변수 임시 적용
+
+Linux에는 이미 많은 환경 변수가 설정되어 있다.
+
+```export``` 명령어를 통해 기록된 환경 변수를 확인하고 새로운 환경 변수를 추가할 수 있다.
+
+```=``` 연산자 앞뒤에는 반드시 공백이 없어야 한다.
+
+```
+export strawberry="is delicious"
+```
