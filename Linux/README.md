@@ -135,12 +135,13 @@ chmod u+x helloworld.js
 |#|Sum|rwx|Permission|
 |-|-|-|-|
 |7|4(r) + 2(w) + 1(x)|rwx|read, write and execute|
-|6|4(r) + 2(w)|rw-|read and write|
-|5|4(r) + 1(x)|r-x|read and execute|
-|4|4(r)|r--|read only|
-|3|2(w) + 1(x)|-wx|write and execute|
-|2|2(w)|-w-|write only|
-|1|1(x)|--x|execute only|
+|6|4(r) + 2(w) + 0(-)|rw-|read and write|
+|5|4(r) + 0(-) + 1(x)|r-x|read and execute|
+|4|4(r) + 0(-) + 0(-)|r--|read only|
+|3|0(-) + 2(w) + 1(x)|-wx|write and execute|
+|2|0(-) + 2(w) + 0(-)|-w-|write only|
+|1|0(-) + 0(-) + 1(x)|--x|execute only|
+|0|0(-) + 0(-) + 0(-)|---|none|
 
 #### Example
 
@@ -162,4 +163,36 @@ Linux에는 이미 많은 환경 변수가 설정되어 있다.
 
 ```
 export strawberry="is delicious"
+```
+
+### javascript에서 환경 변수 사용하기
+
+```
+npm init # Enter를 여러번 입력해 init을 마친다.
+npm i dotenv
+```
+
+```dotenv``` 모듈을 사용하면 자바스크립트에서 환경 변수를 사용할 수 있다.
+
+```dotenv``` 는 환경 변수를 ```.env``` 파일에 저장하고 ```process.env``` 로 로드하는 의존성 모듈이다.
+
+```.env``` 파일은 루트에 위치해야한다.
+
+노드 내장 객체인 ```process.env``` 를 이용하면 ```export``` 로 확인한 내용과 동일한 내용을 객체로 출력한다.
+
+환경 변수를 이용해 API key, DB password와 같은 민감한 정보를 저장하고 관리할 수 있다.
+
+뿐만 아니라 서로 다른 PC 또는 여러 ```.env``` 파일에서, 같은 변수 이름에 다른 값을 할당할 수 있다.
+
+즉, 환경에 따라 다른 값을 사용해 코드를 작성할 수 있다.
+
+```
+# 개발 환경(development)에서 접근할 데이터베이스
+DATABASE_NAME=my_app_dev
+
+# 테스트 환경(test)에서 접근할 데이터베이스
+DATABASE_NAME=my_app_test
+
+# 제품 환경(production)에서 접근할 데이터베이스
+DATABASE_NAME=my_app_prod
 ```
