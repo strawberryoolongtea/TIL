@@ -71,6 +71,6 @@ function fibonacci(n) {
 
 Top-down 방식과 Bottom-up 방식의 소요 시간을 비교하면
 
-Bottom-up 방식이 더 빠르다.
+Bottom-up 시간과 메모리를 절약할 수 있다.
 
 ## 순열과 조합
