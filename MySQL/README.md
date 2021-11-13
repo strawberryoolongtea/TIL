@@ -58,3 +58,17 @@ flush privileges;
 ```
 killall mysqld mysqld_safe
 ```
+
+# SQL 학습하기
+
+[w3schools.com](https://www.w3schools.com/sql/exercise.asp?filename=exercise_select1) 에서 학습할 수 있다.
+
+> SELECT
+
+To get all the columns from the customers table
+
+_student_ 테이블의 모든 칼럼을 가져온다.
+
+```sql
+SELECT * FROM Customers;
+```
