@@ -67,8 +67,90 @@ killall mysqld mysqld_safe
 
 To get all the columns from the customers table
 
-_student_ 테이블의 모든 칼럼을 가져온다.
+_student_ 테이블의 모든 칼럼(에 해당하는 정보)을 가져온다.
 
 ```sql
-SELECT * FROM Customers;
+SELECT * FROM student;
+```
+```
++-----------+-----------+-----------+------+----------+---------+
+| studentID | lastName  | firstName | age  | city     | country |
++-----------+-----------+-----------+------+----------+---------+
+|         1 | john      | doh       |   21 | seoul    | korea   |
+|         2 | welling   | luke      |   23 | new york | usa     |
+|         3 | tompson   | lora      |   23 | tokyo    | japan   |
+|         4 | jung yeon | kim       |   21 | busan    | korea   |
+|         5 | samatoki  | aohitsugi |   24 | osaka    | japan   |
+|         6 | jean      | milbun    |   25 | chicago  | usa     |
++-----------+-----------+-----------+------+----------+---------+
+```
+
+_student_ 테이블의 _city_ 칼럼을 가져온다.
+
+```sql
+SELECT city FROM student;
+```
+```
++----------+
+| city     |
++----------+
+| seoul    |
+| new york |
+| tokyo    |
+| busan    |
+| osaka    |
+| chicago  |
++----------+
+```
+
+> DISTINCT
+
+_student_ 테이블의 중복된 값을 제외한 _age_ 칼럼을 가져온다.
+
+**출력되는 값은 정렬되지 않는다.**
+
+```sql
+SELECT DISTINCT age FROM student;
+```
+```
++------+
+| age  |
++------+
+|   21 |
+|   23 |
+|   24 |
+|   25 |
++------+
+```
+
+> WHERE
+
+_student_ 테이블의 **WHERE 문을 충족하는** 모든 칼럼을 가져온다.
+
+```sql
+SELECT * FROM student WHERE country = 'korea';
+```
+```
++-----------+-----------+-----------+------+-------+---------+
+| studentID | lastName  | firstName | age  | city  | country |
++-----------+-----------+-----------+------+-------+---------+
+|         1 | john      | doh       |   21 | seoul | korea   |
+|         4 | jung yeon | kim       |   21 | busan | korea   |
++-----------+-----------+-----------+------+-------+---------+
+```
+
+_student_ 테이블의 **WHERE 문을 충족하지 않는** 모든 칼럼을 가져온다.
+
+```sql
+SELECT * FROM student WHERE NOT country = 'korea';
+```
+```
++-----------+----------+-----------+------+----------+---------+
+| studentID | lastName | firstName | age  | city     | country |
++-----------+----------+-----------+------+----------+---------+
+|         2 | welling  | luke      |   23 | new york | usa     |
+|         3 | tompson  | lora      |   23 | tokyo    | japan   |
+|         5 | samatoki | aohitsugi |   24 | osaka    | japan   |
+|         6 | jean     | milbun    |   25 | chicago  | usa     |
++-----------+----------+-----------+------+----------+---------+
 ```
