@@ -154,3 +154,54 @@ SELECT * FROM student WHERE NOT country = 'korea';
 |         6 | jean     | milbun    |   25 | chicago  | usa     |
 +-----------+----------+-----------+------+----------+---------+
 ```
+
+> AND
+
+_student_ 테이블의 WHERE 문 조건을 충족하고 AND 문 조건을 충족하는 **둘 다 해당하는** 모든 칼럼을 가져온다.
+
+```sql
+SELECT * FROM student WHERE country = 'japan' AND age = 23;
+```
+```
++-----------+----------+-----------+------+-------+---------+
+| studentID | lastName | firstName | age  | city  | country |
++-----------+----------+-----------+------+-------+---------+
+|         3 | tompson  | lora      |   23 | tokyo | japan   |
++-----------+----------+-----------+------+-------+---------+
+```
+
+> OR
+
+_student_ 테이블의 WHERE 문 조건을 충족하거나 OR 문 조건을 충족하거나 **둘 중 하나에 해당하는** 모든 칼럼을 가져온다.
+
+```sql
+SELECT * FROM student WHERE age = 24 OR age = 25;
+```
+```
++-----------+----------+-----------+------+---------+---------+
+| studentID | lastName | firstName | age  | city    | country |
++-----------+----------+-----------+------+---------+---------+
+|         5 | samatoki | aohitsugi |   24 | osaka   | japan   |
+|         6 | jean     | milbun    |   25 | chicago | usa     |
++-----------+----------+-----------+------+---------+---------+
+```
+
+> ORDER BY
+
+_student_ 테이블의 모든 칼럼을 _firstName_ 의 **알파벳 순서에 따라 정렬**하여 가져온다.
+
+```sql
+SELECT * FROM student ORDER BY firstName;
+```
+```
++-----------+-----------+-----------+------+----------+---------+
+| studentID | lastName  | firstName | age  | city     | country |
++-----------+-----------+-----------+------+----------+---------+
+|         5 | samatoki  | aohitsugi |   24 | osaka    | japan   |
+|         1 | john      | doh       |   21 | seoul    | korea   |
+|         4 | jung yeon | kim       |   21 | busan    | korea   |
+|         3 | tompson   | lora      |   23 | tokyo    | japan   |
+|         2 | welling   | luke      |   23 | new york | usa     |
+|         6 | jean      | milbun    |   25 | chicago  | usa     |
++-----------+-----------+-----------+------+----------+---------+
+```
