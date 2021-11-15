@@ -205,3 +205,5 @@ SELECT * FROM student ORDER BY firstName;
 |         6 | jean      | milbun    |   25 | chicago  | usa     |
 +-----------+-----------+-----------+------+----------+---------+
 ```
+
+> GROUP BY
