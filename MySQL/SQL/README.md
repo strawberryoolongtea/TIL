@@ -6,11 +6,11 @@ SQL이 처리하는 문장의 성격에 따라 분류한 것이다.
 
 테이블, 뷰, 인덱스, 시퀀스 등의 데이터베이스 객체를 생성 및 삭제하거나 수정하는 데 사용된다.
 
-- ```CREATE``` 객체를 생성한다.
-- ```DROP``` 객체를 삭제한다.
-- ```ALTER``` 객체를 변경한다.
-- ```TRUNCATE TABLE``` 테이블에 있는 모든 데이터를 삭제한다.
-- ```RENAME``` 객체 이름을 변경한다.
+- ```CREATE``` : 객체를 생성한다.
+- ```DROP``` : 객체를 삭제한다.
+- ```ALTER``` : 객체를 변경한다.
+- ```TRUNCATE TABLE``` : 테이블에 있는 모든 데이터를 삭제한다.
+- ```RENAME``` : 객체 이름을 변경한다.
 
 > DML(Data Manipulation Language) 데이터 조작어
 
@@ -28,18 +28,22 @@ DQL(Data Query Language)로 분류하기도 한다.
 
 잘못 삭제했을 경우 이전 시점으로 되돌릴 수 있다.
 
-- ```SELECT``` 테이블이나 뷰에서 데이터를 조회한다.
-- ```INSERT``` 데이터를 입력한다.
-- ```UPDATE``` 기존에 저장된 데이터를 수정한다.
-- ```DELETE``` 테이블에 있는 데이터를 삭제한다.
-- ```MERGE``` 조건에 따라 ```INSERT``` 와 ```UPDATE``` 를 수행한다.
+- ```SELECT``` : 테이블이나 뷰에서 데이터를 조회한다.
+- ```INSERT``` : 데이터를 입력한다.
+- ```UPDATE``` : 기존에 저장된 데이터를 수정한다.
+- ```DELETE``` : 테이블에 있는 데이터를 삭제한다.
+- ```MERGE``` : 조건에 따라 ```INSERT``` 와 ```UPDATE``` 를 수행한다.
 
 > TCL(Transaction Control Language) 트랜잭션 제어어
 
 트랜잭션을 처리하는 SQL 문이다.
 
-- ```COMMIT``` DML로 변경된 데이터를 DB에 적용한다.
-- ```ROLLBACK``` DML로 변경된 데이터를 변경 이전 상태로 되돌린다.
+MySQL 에서 ```ROLLBACK``` 을 사용할 경우
+
+기본 기능인 ```AUTOCOMMIT``` 기능을 [비활성화](# 커밋(COMMIT)과 롤백(ROLLBACK))해야 한다.
+
+- ```COMMIT``` : DML로 변경된 데이터를 DB에 적용한다.
+- ```ROLLBACK``` : DML로 변경된 데이터를 변경 이전 상태로 되돌린다.
 
 > DCL(Data Control Language) 데이터 제어어
 
@@ -49,8 +53,8 @@ DQL(Data Query Language)로 분류하기도 한다.
 
 사용자에게 권한을 할당하거나 회수하는 역할을 한다.
 
-- ```GRANT``` 객체에 대한 권한을 할당한다.
-- ```REVOKE``` 객체에 할당된 권한을 회수한다.
+- ```GRANT``` : 객체에 대한 권한을 할당한다.
+- ```REVOKE``` : 객체에 할당된 권한을 회수한다.
 
 # SQL 학습하기
 
@@ -281,3 +285,30 @@ WHERE column_name IS NOT NULL;
 ```
 
 > UPDATE
+
+> DELETE
+
+_student_ 테이블에서 ```WHERE``` 문의 조건에 맞는 데이터를 삭제한다.
+
+```sql
+DELETE FROM student WHERE firstName = 'dumbledore';
+```
+```
++-----------+------------+-----------+------+-------+---------+
+| studentID | lastName   | firstName | age  | city  | country |
++-----------+------------+-----------+------+-------+---------+
+|         7 | hashibira  | inosuke   |   15 | tokyo | japan   |
+|         8 | rengoku    | kyojuro   |   20 | tokyo | japan   |
+|         9 | agatsuma   | zenitsu   |   16 | tokyo | japan   |
+|        10 | uzui       | tengen    |   23 | tokyo | japan   |
+|        11 | gojo       | satoru    |   28 | tokyo | japan   |
+|        12 | fushiguro  | megumi    |   15 | tokyo | japan   |
+|        13 | nanami     | kento     |   27 | tokyo | japan   |
+|        14 | todo       | aoi       |   18 | kyoto | japan   |
+|        15 | kannonzaka | doppo     |   29 | tokyo | japan   |
++-----------+------------+-----------+------+-------+---------+
+```
+
+# 커밋(COMMIT)과 롤백(ROLLBACK)
+
+> ROLLBACK
