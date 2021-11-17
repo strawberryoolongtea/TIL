@@ -40,7 +40,7 @@ DQL(Data Query Language)로 분류하기도 한다.
 
 MySQL 에서 ```ROLLBACK``` 을 사용할 경우
 
-기본 기능인 ```AUTOCOMMIT``` 기능을 [비활성화](./)해야 한다.
+기본 기능인 ```AUTOCOMMIT``` 기능을 [비활성화](./#커밋commit과-롤백rollback)해야 한다.
 
 - ```COMMIT``` : DML로 변경된 데이터를 DB에 적용한다.
 - ```ROLLBACK``` : DML로 변경된 데이터를 변경 이전 상태로 되돌린다.
