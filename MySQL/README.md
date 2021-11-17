@@ -1,3 +1,19 @@
+# Node.js 환경에서 MySQL 데이터베이스에 접근하기
+
+노드 환경에서 MySQL 데이터베이스에 접근하기 위해서는 드라이버가 필요하다.
+
+이를 위해 mysql 모듈을 설치한다.
+
+```npm install mysql```
+
+mysql 모듈을 이용해서 MySQL 데이터베이스를 조작할 수 있다.
+
+```const mysql = require('mysql');```
+
+mysql.createConnection() 함수를 이용해서 데이터베이스에 연결할 수 있다.
+
+[db_connection.js 코드](./db_connection.js)
+
 # MySQL 시작하기
 
 MySQL을 시작할 때 활용할 수 있는 명령어 모음
