@@ -17,6 +17,6 @@
 
 ## [MySQL](./MySQL)
 ## [database](./MySQL/database)
-## [sql](./MySQL/sql)
+## [sql](./MySQL/SQL)
 
 ## [Practices](./Practices)
