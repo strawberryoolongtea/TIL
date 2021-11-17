@@ -1,3 +1,57 @@
+# SQL의 종류
+
+SQL이 처리하는 문장의 성격에 따라 분류한 것이다.
+
+> DDL(Data Definition Language) 데이터 정의어
+
+테이블, 뷰, 인덱스, 시퀀스 등의 데이터베이스 객체를 생성 및 삭제하거나 수정하는 데 사용된다.
+
+- ```CREATE``` 객체를 생성한다.
+- ```DROP``` 객체를 삭제한다.
+- ```ALTER``` 객체를 변경한다.
+- ```TRUNCATE TABLE``` 테이블에 있는 모든 데이터를 삭제한다.
+- ```RENAME``` 객체 이름을 변경한다.
+
+> DML(Data Manipulation Language) 데이터 조작어
+
+데이터베이스의 각 데이터들을 조작하는 데 사용된다.
+
+```SELECT``` 는 정해진 스키마 내에서 쿼리할 수 있는 언어를 뜻하는
+
+DQL(Data Query Language)로 분류하기도 한다.
+
+```DELETE``` 와 ```TRUNCATE``` 의 차이점은
+
+```TRUNCATE TABLE``` 문을 실행하면 테이블에 있는 모든 데이터가 삭제되고 이는 되돌릴 수 없다.
+
+반면 ```DELETE``` 는 조건에 맞는 데이터만 선별해 삭제할 수 있으며
+
+잘못 삭제했을 경우 이전 시점으로 되돌릴 수 있다.
+
+- ```SELECT``` 테이블이나 뷰에서 데이터를 조회한다.
+- ```INSERT``` 데이터를 입력한다.
+- ```UPDATE``` 기존에 저장된 데이터를 수정한다.
+- ```DELETE``` 테이블에 있는 데이터를 삭제한다.
+- ```MERGE``` 조건에 따라 ```INSERT``` 와 ```UPDATE``` 를 수행한다.
+
+> TCL(Transaction Control Language) 트랜잭션 제어어
+
+트랜잭션을 처리하는 SQL 문이다.
+
+- ```COMMIT``` DML로 변경된 데이터를 DB에 적용한다.
+- ```ROLLBACK``` DML로 변경된 데이터를 변경 이전 상태로 되돌린다.
+
+> DCL(Data Control Language) 데이터 제어어
+
+어떤 RDBMS라도 사용하기 위해서는 사용자(user)를 만들고 이 사용자로 로그인해야 한다.
+
+데이터베이스 테이블과 객체를 사용할 때 권한이 있어야 하는데
+
+사용자에게 권한을 할당하거나 회수하는 역할을 한다.
+
+- ```GRANT``` 객체에 대한 권한을 할당한다.
+- ```REVOKE``` 객체에 할당된 권한을 회수한다.
+
 # SQL 학습하기
 
 [w3schools.com](https://www.w3schools.com/sql/exercise.asp?filename=exercise_select1) 에서 학습할 수 있다.
